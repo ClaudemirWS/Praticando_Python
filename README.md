@@ -1,1 +1,1 @@
-## Repositório contendo pequenos exercícios realizados na linguagem Phyton.
+## Repositório contendo pequenos exercícios realizados na linguagem Python.
