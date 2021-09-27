@@ -1,1 +1,1 @@
-## Repositório contendo pequenos exercícios realizados na linguagem Phyton :computer:
+## Repositório contendo pequenos exercícios realizados na linguagem Phyton
