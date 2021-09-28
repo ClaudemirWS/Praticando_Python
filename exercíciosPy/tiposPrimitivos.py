@@ -1,3 +1,4 @@
+#Verifica tipos primitivos e utiliza metodos "is"
 print('Vamos dissecar uma variável!')
 v = input('Digite algo: ')
 print('O tipo primitivo desse valor é: ', type(v))
