@@ -1,4 +1,4 @@
-print('Calculadora Simples\n') #Titulo do programa
+print(' ========== Calculadora Simples =========== \n') #Titulo do programa
 inicia = 1 #variavel para o do/while
 
 while inicia == 1: #roda o programa
@@ -14,7 +14,7 @@ while inicia == 1: #roda o programa
 
     #realiza operação baseado na escolha do usuário e faz o print
     if (op == '+'): 
-        print('\n {} + {} = {}'.format(num1,num2, num1 + num2))
+        print(' {} + {} = {}'.format(num1,num2, num1 + num2))
 
     elif (op == '/'): 
         print('\n {} / {} = {}'.format(num1,num2, num1 / num2))
