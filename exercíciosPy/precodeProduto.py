@@ -1,6 +1,6 @@
 print('========= DIFERENÇA NO FALOR FINAL DE UM PRODUTO ==========')
 prec = float(input('Qual o preço do produto em R$? '))
-parce = int(input('Em quantas parcelas deseja pagar? '))
+parce = int(input('Em quantas parcelas deseja pagar? (Máximo: 3x)'))
 
 if (parce == 1 or parce == 0):
     avista = prec - (prec*5/100)    
