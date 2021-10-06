@@ -1,4 +1,5 @@
-from math import trunc #aprendendo a importar modulos
-print('========== MOSTRA PARTE INTEIRA DE UM NÚMERO REAL =========')
-num = float(input('Digite um número real qualquer: '))
-print('O que vem antes da virgula no número digitado é {}'.format(trunc(num)))
+from math import hypot #aprendendo a importar modulos
+print('========== COMPRIMENTO DA HIPOTENUSA =========')
+cato = float(input('Comprimento do cateto oposto: '))
+cata = float(input('Comprimento do cateto adjacente: '))
+print('A hipotenusa é {:.2f}'.format(hypot(cato,cata)))
