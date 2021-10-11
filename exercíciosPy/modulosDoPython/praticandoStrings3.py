@@ -1,4 +1,4 @@
-print('========== Analisando Número =========')
+print('========== Listando Unidade, Dezena, Centena e Milhar =========')
 num = str(input('Digite um número de 0 a 9999: '))
 print('Você digitou {}, analisando..'.format(num))
 
