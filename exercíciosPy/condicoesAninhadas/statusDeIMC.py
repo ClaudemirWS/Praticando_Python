@@ -16,4 +16,4 @@ elif (imc > 40):
 else:
     print('Não foi possível realiza a operação.')
 
-print('Seu IMC é {:.2f} e você está em estado de {}'.format(imc,status))
+print('Seu IMC é {:.1f} e você está em estado de {}'.format(imc,status))
