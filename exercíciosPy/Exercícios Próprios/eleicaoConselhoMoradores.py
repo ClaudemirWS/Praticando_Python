@@ -1,9 +1,12 @@
-print('===== ELEIÇÃO DO CONSELHO DE MORADORES DO BAIRRO =====')
 lista = []
 cod = 0
 inicia = 0
+voto = 0
+votado = ''
 
+print('===== ELEIÇÃO DO CONSELHO DE MORADORES DO BAIRRO =====')
 cand = int(input('Quantos candidatos deseja registrar? '))
+
 for count in range (1, cand+1):#REGISTRA CANDIDATOS
     print('\n===== {}º REGISTRO ====='.format(count))
     pessoa = str(input('Registre o nome do {}º candidato: '.format(count))).strip().title()  
@@ -32,7 +35,6 @@ if(ver == 2):#INICIAR VOTAÇÃO?
 if(inicia == 1):#VOTAÇÃO
     print('\n===== VOTAÇÃO =====')
     escolha = int(input('Digite o número do seu candidato: '))
-    #organização de candidados
     for count in range (0,len(lista)):
         if (count == 0):
             candidato = lista[count]
@@ -41,11 +43,22 @@ if(inicia == 1):#VOTAÇÃO
         else:                                        
             candidato = lista[count]
             num = candidato[0]
-            nome = candidato[1]                                                 
-    #sistema de votação        
-    if (escolha == num):
-        print('Votou no nº {}, candidato {}.'.format(num,nome))   
+            nome = candidato[1]        
 
+        if (count == 0):
+            if (escolha == num):
+                voto = num
+                votado = nome
+        else: 
+            if (escolha == num):
+                voto = num
+                votado = nome   
+                    
+    if (voto != 0):    
+        print('Você votou em {}, nº {}.'.format(votado,voto)) 
+    else: 
+        print('Você votou NULO.')
+          
 elif(inicia == 2):#FINALIZA PROGRAMA CASO DESEJE NÃO VOTAR 
     print('\nFinalizando...') 
     exit()
