@@ -1,77 +1,88 @@
-lista = []
+listaCandidatos = []
 listavotos = []
-cod = 0
-inicia = 0
-votar = 1
-numvoto = 0
-votado = ''
 
 print('===== ELEIÇÃO DO CONSELHO DE MORADORES DO BAIRRO =====')
-cand = int(input('Quantos candidatos deseja registrar? '))
+comecaCadastro = int(input('\nComeçar a cadastrar candidatos? 1 - SIM ou 2 - NÃO: '))
 
-for count in range (1, cand+1):#REGISTRA CANDIDATOS
-    print('\n===== {}º REGISTRO ====='.format(count))
-    pessoa = str(input('Registre o nome do {}º candidato: '.format(count))).strip().title()  
-    cod = int(input('Registre o código de votação do {}º candidato: '.format(count)))    
-    lista += [[cod,pessoa]]
-'''
-ver = int(input('\nVer a lista de candidatos? 1 - SIM ou 2 - NÃO: '))
-if (ver == 1):#LISTAGEM DE CANDIDADOS
+while comecaCadastro == 1:#REGISTRA CANDIDATOS
+    quantCandidados = int(input('Quantos candidatos deseja registrar? '))
+    for count in range (1, quantCandidados+1):
+        print('\n===== {}º REGISTRO ====='.format(count))
+        pessoa = str(input('Nome do {}º candidato(a): '.format(count))).strip().title()  
+        numPessoa = int(input('Número de votação do {}º candidato(a): '.format(count)))  
+        listaCandidatos += [[numPessoa,pessoa]]
+    comecaCadastro = 0
+
+listarCandidatos = int(input('\nVer a lista de candidatos? 1 - SIM ou 2 - NÃO: '))
+
+if (listarCandidatos == 1):#LISTAGEM DE CANDIDADOS
     print('\n===== LISTA DE CANDIDATOS =====')
     #organização de candidados
-    for count in range (0,len(lista)):
+    for count in range (0,len(listaCandidatos)):
         if (count == 0):
-            candidato = lista[count]
-            num = candidato[0]
-            nome = candidato[1]            
+            dadosCandidato = listaCandidatos[count]
+            num = dadosCandidato[0] #vamos sempre usar 0 para número do candidato
+            nome = dadosCandidato[1] #vamos sempre usar 1 para nome do candidato           
         else:                                        
-            candidato = lista[count]
-            num = candidato[0] 
-            nome = candidato[1]                  
-        print('\nCandidato: {}, vote no nº {}.'.format(nome,num))
-'''    
+            dadosCandidato = listaCandidatos[count]
+            num = dadosCandidato[0] 
+            nome = dadosCandidato[1]                  
+        print('\nCandidato(a): {}, vote no nº {}.'.format(nome,num))
+    listarCandidatos = 0
 
-inicia = int(input('\nIniciar votação? 1 - SIM ou 2 - NÃO: ')) 
+comecaVoto = int(input('\nComeçar votação? 1 - SIM ou 2 - NÃO: ')) 
 
-if(inicia == 1):#VOTAÇÃO
+if(comecaVoto == 1):#VOTAÇÃO
     print('\n===== VOTAÇÃO =====')
-    while inicia == 1: #roda o programa
+    while comecaVoto == 1: #roda o programa
         escolha = int(input('Digite o número do seu candidato: '))
-        for count in range (0,len(lista)):
+        for count in range (0,len(listaCandidatos)):
             if (count == 0):
-                candidato = lista[count]
-                num = candidato[0]
-                nome = candidato[1]            
+                dadosCandidato = listaCandidatos[count]
+                num = dadosCandidato[0]
+                nome = dadosCandidato[1]            
             else:                                        
-                candidato = lista[count]
-                num = candidato[0]
-                nome = candidato[1]        
+                dadosCandidato = listaCandidatos[count]
+                num = dadosCandidato[0]
+                nome = dadosCandidato[1]        
 
             if (count == 0):
                 if (escolha == num):
-                    numvoto = num
+                    numVoto = num
                     votado = nome                    
             else: 
                 if (escolha == num):
-                    numvoto = num
+                    numVoto = num
                     votado = nome
         
-        listavotos += [numvoto]#registra número de votos em uma lista                                    
+        listavotos += [numVoto]#registra número de votos em uma listaCandidatos                                    
         
-        if (numvoto != 0):    
-            print('Você votou em {}, nº {}.'.format(votado,numvoto))                      
+        if (numVoto != 0):    
+            print('Você votou em {}, nº {}.'.format(votado,numVoto))                      
         else: 
             print('Você votou NULO.')
 
-        numvoto = 0#zera o último votado
+        numVoto = 0#zera o último votado
 
-        inicia = int(input('\nDeseja votar novamente? 1 - SIM ou 2 - NÃO: '))      
+        comecaVoto = int(input('\nDeseja votar novamente? 1 - SIM ou 2 - NÃO: '))      
 
-print('Lista de votos: {}'.format(listavotos))
+comecaContagem = int(input('\nComeçar contagem de votos? 1 - SIM ou 2 - NÃO: '))
 
-if(inicia == 2):#FINALIZA PROGRAMA CASO DESEJE NÃO VOTAR 
-    print('\nFinalizando...') 
-    exit()
+while comecaContagem == 1:#CONTAGEM DOS VOTOS
+    print('\n===== RESULTADO DA ELEIÇÃO =====')
+    for count in range (0,len(listaCandidatos)):
+            if (count == 0):
+                dadosCandidato = listaCandidatos[count]
+                num = dadosCandidato[0]
+                nome = dadosCandidato[1]  
+                contagem = listavotos.count(num)                     
+            else:                                        
+                dadosCandidato = listaCandidatos[count]
+                num = dadosCandidato[0]
+                nome = dadosCandidato[1]
+                contagem = listavotos.count(num)
+            print('{}, nº {}, obteve {} votos.'.format(nome,num,contagem)) 
+    comecaContagem = 0
 
 else:#FINALIZA PROGRAMA
     print('\nFinalizando...') 
