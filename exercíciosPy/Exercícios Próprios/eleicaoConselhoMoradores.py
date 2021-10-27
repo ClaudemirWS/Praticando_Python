@@ -3,6 +3,10 @@ listavotos = []
 
 print('===== ELEIÇÃO DO CONSELHO DE MORADORES DO BAIRRO =====')
 comecaCadastro = int(input('\nComeçar a cadastrar candidatos? 1 - SIM ou 2 - NÃO: '))
+    
+if (comecaCadastro == 2):
+    print('\nFinalizando...') 
+    exit() 
 
 while comecaCadastro == 1:#REGISTRA CANDIDATOS
     quantCandidados = int(input('Quantos candidatos deseja registrar? '))
@@ -65,6 +69,10 @@ if(comecaVoto == 1):#VOTAÇÃO
         numVoto = 0#zera o último votado
 
         comecaVoto = int(input('\nDeseja votar novamente? 1 - SIM ou 2 - NÃO: '))      
+
+if (comecaVoto == 2):
+    print('\nFinalizando...') 
+    exit() 
 
 comecaContagem = int(input('\nComeçar contagem de votos? 1 - SIM ou 2 - NÃO: '))
 
