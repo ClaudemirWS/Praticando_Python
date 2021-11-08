@@ -1,8 +1,16 @@
 print('========== MAIOR E MENOR ==========')
 lista = []
-for count in range (0,5):
-    lista += [int(input('Digite um valor: '))] 
 
+for count in range (0,5):
+    lista.append(int(input('Digite um valor: ')))
+    
 print(f'\nSua lista de números: {lista}')
-print(f'O maior valor foi o {max(lista)} na posição {lista.index(max(lista))+1}') # somei mais um para ficar mais
-print(f'O menor valor foi o {min(lista)} na posição {lista.index(min(lista))+1}') # "simples de ler"
+print(f'O maior valor foi o {max(lista)} na posição',end=' ')
+for indiceNum, varreLista in enumerate(lista): #se o item varrido for igual ao maior, printa
+    if (varreLista == max(lista) ):
+        print(f'{indiceNum}', end='...')
+print(f'\nO menor valor foi o {min(lista)} na posição',end=' ')
+for indiceNum, varreLista in enumerate(lista): #se o item varrido for igual ao menor, printa
+    if (varreLista == min(lista)):
+        print(f'{indiceNum}', end='...')
+
