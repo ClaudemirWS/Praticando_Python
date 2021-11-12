@@ -18,6 +18,8 @@ while roda == 'S':
         print('Saindo...')
         break
 listaNum.sort()
+listaPar.sort()
+listaImpar.sort()
 print(f"""Você digitou os números: {listaNum}.
 Os pares foram: {listaPar}.
 Os ímpares foram {listaImpar}.""")
