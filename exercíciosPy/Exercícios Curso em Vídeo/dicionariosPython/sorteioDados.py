@@ -7,7 +7,7 @@ for indice in range (1, 5):
     dcrn[f'jogador {indice}'] = randint(1,6)
 for indice, valor in dcrn.items():
     print(f'O {indice} tirou o dado {valor}.')
-
+print(dcrn)
 print('========== RANKING DOS JOGADORES ==========')
 ranking = sorted(dcrn.items(), key=itemgetter(1), reverse=True)
 for indice, varreLista in enumerate(ranking):
