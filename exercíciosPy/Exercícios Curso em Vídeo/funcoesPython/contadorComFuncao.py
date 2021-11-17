@@ -1,40 +1,43 @@
 print('========== CONTADOR ==========')
-lista = []
 def contador(inicio, final, passo):
-    print('CONTANDO DE 1 ATÉ 10 DE 1 EM 1')
-    for indice in range (0, 11, 1):
-        lista.append(indice)
-    for numeros in lista:
-        print(numeros, end=' ')
-    lista.clear()
+    #CONTAGEM REGRESSIVA ATÉ 0
+    if (inicio > final and final == 0 and passo > 0):
+        print(f'CONTANDO DE {inicio} ATÉ {final} DE {passo} EM {passo}')
+        for indice in range (inicio, (final)-passo, 0 - (passo)):
+            print(indice, end=' ')
+    #OBSOLETO? CONTAGEM COM POSITIVOS
+    if (inicio > 0 and final > 0):
+        print(f'CONTANDO DE {inicio} ATÉ {final} DE {passo} EM {passo}')
+        for indice in range (inicio, (final)+1, passo):
+            print(indice, end=' ')
     print()
-    print('CONTANDO DE 10 ATÉ 1 DE 2 EM 2')
-    for indice in range (0, 11, 2):
-        lista.append(indice)
-        lista.sort(reverse=True)
-    for numeros in lista:
-        print(numeros, end=' ')
-    lista.clear()
-    print()
-    print(f'CONTANDO DE {inicio} ATÉ {final} DE {passo} EM {passo}')
-    if (inicio and final > 0):
-        for indice in range (inicio, final+1, passo):
-            lista.append(indice)
-        for numeros in lista:
-            print(numeros, end=' ')
-    elif (inicio < 0):
-        for indice in range (inicio, final, passo):
-            indice -= passo
-            lista.append(indice)
-        for numeros in lista:
-            print(numeros, end=' ')
-    elif (final < 0):
-        for indice in range (inicio+1, final, 0 - (passo)):
-            indice -= passo
-            lista.append(indice)
-        for numeros in lista:
-            print(numeros, end=' ')
-    lista.clear()
+    #CONTAGEM FINAL NEGATIVO
+    if (final < 0):
+        #DECRESCENTE COM PASSO POSITIVO
+        if (passo > 0):
+            print(f'CONTANDO DE {inicio} ATÉ {final} DE {passo} EM {passo}')
+            for indice in range (inicio, (final)-1, 0 - (passo)):
+                print(indice, end=' ')
+    #DECRESCENTE COM PASSO NEGATIVO
+    if (passo < 0):
+        print(f'CONTANDO DE {inicio} ATÉ {final} DE {passo} EM {passo}')
+        for indice in range (inicio, (final)-1, passo):
+            print(indice, end=' ')
+    #CONTAGEM NEGATIVOS
+    if (inicio < 0 and final < 0):
+        print(f'CONTANDO DE {inicio} ATÉ {final} DE {passo} EM {passo}')
+        for indice in range (inicio, (final)-1, passo):
+            print(indice, end=' ')
+    #CONTAGEM REGRESSIVA NEGATIVA ATÉ 0
+    if (final > inicio and inicio == 0):
+        print(f'CONTANDO DE {inicio} ATÉ {final} DE {passo} EM {passo}')
+        for indice in range (inicio, (final)-passo, 0 - (passo)):
+            print(indice, end=' ')
+    #CONTAGEM PROGRESSIVA DE NEGATIVO PARA POSITIVO
+    if (inicio < final):
+        print(f'CONTANDO DE {inicio} ATÉ {final} DE {passo} EM {passo}')
+        for indice in range (inicio, (final)+1, passo):
+            print(indice, end=' ')
     return
 
 #INICIO DO CÓDIGO
