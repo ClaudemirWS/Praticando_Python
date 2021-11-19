@@ -1,13 +1,11 @@
 print('========== FATORIAL USANDO FUNÇÕES ==========')
 def fatorial(num, show=False):
-    conta = num
     fat = 1
-    while conta > 0: 
+    for indice in range (num, 0, -1):
         if (show == True):   
-            print('{}'.format(conta),end='')
-            print(' x ' if conta > 1 else ' = ', end='' )
-        fat = fat * conta
-        conta -= 1    
+            print('{}'.format(indice),end='')
+            print(' x ' if indice > 1 else ' = ', end='' )
+        fat *= indice
     print(f'{fat}',end='') 
 
 #INICIO DO PROGRAMA
