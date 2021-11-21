@@ -1,4 +1,3 @@
-#Em andamento....
 print('========== Lista de Compras =========')
 def mostraLista(listaCompras):
     print()
