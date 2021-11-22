@@ -2,13 +2,13 @@ print('========== LENDO INTEIROS ==========')
 def leiaInt(n):
     print(n, end='')
     while True:
-        try:
-            n = int(input())
-            break
-        except: ValueError
-        print('ERRO! DIGITE UM VALOR INTEIRO!')
-        print(n, end='')
-    return n
+        n = str(input())
+        if (n.isnumeric()):
+            int(n)
+            return n
+        else:
+            print('Erro! Tente novamente: ', end='')
+    
     
 #PROGRAMA PRINCIPAL
 n = leiaInt('Digite um número inteiro: ')
