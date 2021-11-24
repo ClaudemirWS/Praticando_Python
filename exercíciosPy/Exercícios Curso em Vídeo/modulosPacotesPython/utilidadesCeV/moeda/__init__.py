@@ -26,4 +26,3 @@ A metade de {moeda(valor)} é {metade(valor)}
 Um aumento de {porcAum}% é {aumentar(valor, porcAum)}
 Uma redução de {porcRed}% é {diminuir(valor, porcRed)}""")
     print('-' * 40)
-
