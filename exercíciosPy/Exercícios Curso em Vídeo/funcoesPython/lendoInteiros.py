@@ -8,7 +8,6 @@ def leiaInt(n):
         else:
             print('Erro! Tente novamente: ', end='')
     
-    
 #PROGRAMA PRINCIPAL
 n = leiaInt('Digite um número inteiro: ')
 print(f'Você digitou {n}')
