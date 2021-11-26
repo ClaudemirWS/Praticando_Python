@@ -4,8 +4,7 @@ def leiaInt(n):
     while True:
         n = str(input())
         if (n.isnumeric()):
-            int(n)
-            return n
+            return int(n)
         else:
             print('Erro! Tente novamente: ', end='')
     
