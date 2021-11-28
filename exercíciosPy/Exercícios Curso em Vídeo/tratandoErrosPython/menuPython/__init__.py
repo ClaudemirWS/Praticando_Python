@@ -1,0 +1,2 @@
+import menuPrincipal
+menuPrincipal.Menu()
