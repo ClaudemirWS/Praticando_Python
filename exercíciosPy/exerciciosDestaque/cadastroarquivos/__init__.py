@@ -1,0 +1,2 @@
+import menuprincipal
+menuprincipal.menu()

@@ -1,5 +1,5 @@
-import cadastraPessoa
-def Menu():
+import cadastrapessoas
+def menu():
     print('\n========== CADASTRO DE PESSOAS ==========')
     print("""
     1 - VER PESSOAS CADASTRADAS
@@ -7,21 +7,16 @@ def Menu():
     3 - SAIR DO SISTEMA""")
     try:
         op = int(input('\nSua opção: '))
-    except: 
+    except:
         print('\n\033[31mOpção inválida! Tente novamente\033[m')
-        Menu()
+        menu()
     else:
-        #CADASTROS
+    # CADASTROS
         if (op == 1):
-            cadastraPessoa.verCadastros()
+            cadastrapessoas.vercadastros()
         elif (op == 2):
-            cadastraPessoa.cadastro()
-        elif (op == 3):
+            cadastrapessoas.cadastro()
+        else:
             print('\n\033[32mFECHANDO PROGRAMA, Obrigado!\033[m')
             exit()
-        else:
-            print('\n\033[31mOpção inválida! Tente novamente\033[m')
-            Menu()
-
-
 
