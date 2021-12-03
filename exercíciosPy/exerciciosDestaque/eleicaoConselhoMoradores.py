@@ -39,40 +39,43 @@ comecaVoto = int(input('\nComeçar votação? 1 - SIM ou 2 - NÃO: '))
 if(comecaVoto == 1):#VOTAÇÃO
     print('\n===== VOTAÇÃO =====')
     while comecaVoto == 1: #roda o programa
-        escolha = int(input('Digite o número do seu candidato: '))
-        for count in range (0,len(listaCandidatos)):
-            if (count == 0):
-                dadosCandidato = listaCandidatos[count]
-                num = dadosCandidato[0]
-                nome = dadosCandidato[1]            
-            else:                                        
-                dadosCandidato = listaCandidatos[count]
-                num = dadosCandidato[0]
-                nome = dadosCandidato[1]        
+        try:
+            escolha = int(input('Digite o número do seu candidato: ')) 
+            for count in range (0,len(listaCandidatos)):
+                if (count == 0):
+                    dadosCandidato = listaCandidatos[count]
+                    num = dadosCandidato[0]
+                    nome = dadosCandidato[1]            
+                else:                                        
+                    dadosCandidato = listaCandidatos[count]
+                    num = dadosCandidato[0]
+                    nome = dadosCandidato[1]        
 
-            if (count == 0):
-                if (escolha == num):
-                    numVoto = num
-                    votado = nome                    
+                if (count == 0):
+                    if (escolha == num):
+                        numVoto = num
+                        votado = nome                    
+                else: 
+                    if (escolha == num):
+                        numVoto = num
+                        votado = nome
+            
+            listavotos += [numVoto]#registra número de votos em uma listaCandidatos                                    
+            
+            if (numVoto != 0):    
+                print('Você votou em {}, nº {}.'.format(votado,numVoto))                      
             else: 
-                if (escolha == num):
-                    numVoto = num
-                    votado = nome
-        
-        listavotos += [numVoto]#registra número de votos em uma listaCandidatos                                    
-        
-        if (numVoto != 0):    
-            print('Você votou em {}, nº {}.'.format(votado,numVoto))                      
-        else: 
-            print('Você votou NULO.')
+                print('Você votou NULO.')
 
-        numVoto = 0#zera o último votado
+            numVoto = 0#zera o último votado
 
-        comecaVoto = int(input('\nDeseja votar novamente? 1 - SIM ou 2 - NÃO: '))      
+            comecaVoto = int(input('\nDeseja votar novamente? 1 - SIM ou 2 - NÃO: '))
+        except:
+            print('\nNúmero inválido, tente novamente.')    
+            comecaVoto = 1  
 
 if (comecaVoto == 2):
     print('\nFinalizando...') 
-    exit() 
 
 comecaContagem = int(input('\nComeçar contagem de votos? 1 - SIM ou 2 - NÃO: '))
 
