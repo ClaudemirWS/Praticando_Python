@@ -10,9 +10,12 @@ def cadastro():
         idade = int(input('Idade: '))
         sexo = str(input('Sexo M/F: ')).strip().upper()[0]
         pessoasCad.append([nome,idade,sexo])
-        return pessoasCad, menuprincipal.menu()
+        sleep(0.5)
+        menuprincipal.menu()
+        return pessoasCad
     except:
         print('\n\033[31mOpção inválida! Digite atentamente.\033[m')
+        sleep(0.5)
         menuprincipal.menu()
 
 def vercadastros():
@@ -21,6 +24,8 @@ def vercadastros():
         for indice, pessoas in enumerate(pessoasCad):
             print(f'Pessoa {indice}: Nome: {pessoas[0]}, Idade: {pessoas[1]}, Sexo: {pessoas[2]}')
     else:
-        print('NENHUMA PESSOA CADASTRADA.')
+        print('\033[31m NENHUMA PESSOA CADASTRADA. \033[m')
     sleep(0.5)
+    menuprincipal.menu()
+    
     

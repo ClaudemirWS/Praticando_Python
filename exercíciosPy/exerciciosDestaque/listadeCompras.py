@@ -1,4 +1,5 @@
 print('========== Lista de Compras =========')
+#exibe  a lista item por item
 def mostraLista(listaCompras):
     print()
     print('-' * 33)
@@ -8,7 +9,7 @@ def mostraLista(listaCompras):
         for listarProd in items:
             print(f'{listarProd["item"]} {listarProd["qtd"]:>20}')
             
-
+#faz cópia do item registrado na lista e limpa o ultimo item
 def registraItem(dcrn, item):
     item.append(dcrn.copy())
     listaCompras.append(item[:])
